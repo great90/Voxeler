@@ -7,7 +7,7 @@ workspace "Voxeler"
         language "C++"
         targetdir "bin/%{cfg.buildcfg}"
 
-        files { "**/*.cpp", "**/*.h" }
+        files { "**/*.cpp", "**/*.h" , "**/*.hpp"}
 
         filter "configurations:Debug"
             defines { "DEBUG" }
