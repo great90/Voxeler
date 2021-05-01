@@ -52,10 +52,16 @@ namespace Voxeler{
         void Initialize();
         void Exit();
         void Pause();
-        void Debugbreak();
         void Update();
 		void Render();
         bool IsGameRunning;
+        int Gamemode;
+};
+
+namespace Voxeler{
+    class Engine{
+
+    };
 };
 
 // ECS stuff

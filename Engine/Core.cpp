@@ -6,17 +6,13 @@ namespace Voxeler{
     }
     
     void Exit() {
-
+        IsGameRunning = false;
     }
     
     void Pause() {
         std::cin.get();
     }
-    
-    void Debugbreak() {
-        std::cerr << "Debug Break Invoked!" << "\n";
-        Pause();
-        Exit();
+    void Update(){
+        ECS::Manager.Update();
     }
-
 };
