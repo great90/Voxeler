@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef ECS_ON
+
 #include "EntityManager.h"
 
 namespace ECS {
@@ -47,3 +49,5 @@ namespace ECS {
 		EntityID ID;
 	};
 }
+
+#endif

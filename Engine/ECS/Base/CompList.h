@@ -1,5 +1,5 @@
 #pragma once
-
+#ifdef ECS_ON
 #include "Types.h"
 
 namespace ECS {		
@@ -48,3 +48,4 @@ namespace ECS {
 		std::vector<T> data;		
 	};
 }
+#endif

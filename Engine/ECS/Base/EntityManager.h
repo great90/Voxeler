@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef ECS_ON
+
 #include "Types.h"
 #include "CompList.h"
 #include "BaseSystem.h"
@@ -258,3 +260,5 @@ namespace ECS {
 
 	static EntityManager& Manager = ECS::EntityManager::Ref();
 }
+
+#endif

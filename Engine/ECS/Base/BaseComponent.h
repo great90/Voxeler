@@ -1,4 +1,5 @@
 #pragma once
+#ifdef ECS_ON
 
 #include "Types.h"
 
@@ -14,3 +15,5 @@ namespace ECS {
 		friend class EntityManager;
 	};
 }
+
+#endif

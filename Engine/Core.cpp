@@ -1,8 +1,17 @@
 #include "Core.hpp"
 
 namespace Voxeler{
-    void Intitalize() {
+    
+    void Engine::Initialize() {
         IsGameRunning = true;
+    }
+
+    void Engine::Render(){
+
+    }
+
+    void Engine::Update(){
+        ECS::Manager.Update();
     }
     
     void Exit() {
@@ -11,8 +20,5 @@ namespace Voxeler{
     
     void Pause() {
         std::cin.get();
-    }
-    void Update(){
-        ECS::Manager.Update();
     }
 };

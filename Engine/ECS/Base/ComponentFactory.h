@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef ECS_ON
+
 #include "BaseComponent.h"
 
 namespace ECS {
@@ -54,3 +56,5 @@ namespace ECS {
     };
 
 }
+
+#endif

@@ -22,7 +22,10 @@
 #include <unordered_map>
 
 #define ECS_ON
+#define VERSION "0.1"
 
+#define SCREEN_WIDTH 1280
+#define SCREEN_HEIGHT 720
 
 // platform stuff
 
@@ -49,20 +52,40 @@
 #endif
 
 namespace Voxeler{
-        void Initialize();
         void Exit();
         void Pause();
-        void Update();
-		void Render();
         bool IsGameRunning;
         int Gamemode;
 };
 
-namespace Voxeler{
-    class Engine{
+namespace Voxeler {
 
-    };
-};
+	class Engine {
+
+	public:
+		~Engine();
+		Engine(const Engine&) = delete;
+		Engine& operator=(const Engine&) = delete;
+
+		static Engine& Ref() {
+			static Engine reference;
+			return reference;
+		}
+
+		void Initialize();
+		void Render();
+        void Update();
+
+	private:
+		Engine();
+
+	private:
+		float lastFrame, deltaTime;
+	};
+
+	static Engine& Core = Engine::Ref();
+}
+
 
 // ECS stuff
 

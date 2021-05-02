@@ -1,5 +1,5 @@
 #pragma once
-
+#ifdef ECS_ON
 #include "../ECS.h"
 
 namespace ECS {
@@ -30,3 +30,4 @@ namespace ECS {
 		std::set<EntityID> entities;
 	};
 }
+#endif

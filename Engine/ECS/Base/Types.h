@@ -1,5 +1,7 @@
 #pragma once
 
+#ifdef ECS_ON
+
 namespace ECS {
 
 	class Entity;
@@ -42,3 +44,4 @@ namespace ECS {
 }
 
 
+#endif

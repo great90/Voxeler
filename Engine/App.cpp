@@ -3,11 +3,11 @@
 using namespace Voxeler;
 
 int main(){
-    Initialize();
+    Core.Initialize();
 
     while(IsGameRunning){
         Timer.Tick();
-        Update();
-        Render();
+        Core.Update();
+        Core.Render();
     }
 }
