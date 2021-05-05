@@ -86,7 +86,7 @@ namespace Voxeler {
 		Engine();
 
 	private:
-		void Window();
+		GLFWwindow* window;
 	};
 
 	static Engine& Core = Engine::Ref();

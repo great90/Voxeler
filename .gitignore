@@ -3,8 +3,16 @@
 Engine/.vs/
 *.sln
 *.vcxproj
+*.vcxproj.user
 *.vcxproj.filters
 *.obj
-*pch
+*.pch
+*.tlog
+*.lastbulidstate
+*.log
+*.pdb
+*.idb
+
+
 bin/
 Engine/bin
