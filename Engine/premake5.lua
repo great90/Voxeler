@@ -5,12 +5,13 @@ workspace "Voxeler"
         
         kind "ConsoleApp"
         language "C++"
-        targetdir "bin/%{cfg.buildcfg}"
+        cppdialect "C++17"
+        targetdir "%{wks.location}/bin/%{cfg.buildcfg}"
 
         files { "**/*.cpp", "**/*.h" , "**/*.hpp" , "*.h" , "*.hpp" , "*.cpp"}
-        includedirs {"Vendor/GLFW/include",}          
+        includedirs {"%{wks.location}/Vendor/includes",}          
 
-        libdirs {"Vendor/GLFW/vc-2019/",}
+        libdirs {"%{wks.location}/Vendor/libs",}
 
         links {
 		    "glfw3.lib",
