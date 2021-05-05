@@ -6,12 +6,12 @@ workspace "Voxeler"
         kind "ConsoleApp"
         language "C++"
         cppdialect "C++17"
-        targetdir "%{wks.location}/bin/%{cfg.buildcfg}"
+        targetdir "bin/%{cfg.buildcfg}"
 
         files { "**/*.cpp", "**/*.h" , "**/*.hpp" , "*.h" , "*.hpp" , "*.cpp"}
-        includedirs {"%{wks.location}/Vendor/includes",}          
+        includedirs {"Vendor/includes",}          
 
-        libdirs {"%{wks.location}/Vendor/libs",}
+        libdirs {"Vendor/libs",}
 
         links {
 		    "glfw3.lib",
