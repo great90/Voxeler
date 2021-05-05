@@ -1,6 +1,6 @@
 #pragma once
 
-// BASIC
+// Basic Includes
 #include <set>
 #include <map>
 #include <array>
@@ -23,7 +23,9 @@
 
 // GL stuff
 
-#include <GLFW/glfw3.h>
+//#include <GLFW/glfw3.h>
+
+// General stuff
 
 #define ECS_ON
 #define VERSION "0.1"
