@@ -7,7 +7,7 @@ workspace "Voxeler"
         language "C++"
         targetdir "bin/%{cfg.buildcfg}"
 
-        files { "**/*.cpp", "**/*.h" , "**/*.hpp"}
+        files { "**/*.cpp", "**/*.h" , "**/*.hpp" , "*.h" , "*.hpp" , "*.cpp"}
         includedirs {"Vendor/GLFW/include",}          
 
         libdirs {"Vendor/GLFW/vc-2019/",}
