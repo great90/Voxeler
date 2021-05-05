@@ -21,8 +21,14 @@
 #include <filesystem>
 #include <unordered_map>
 
+// GL stuff
+
+#include <GLFW/glfw3.h>
+
 #define ECS_ON
 #define VERSION "0.1"
+
+#define WINDOW_NAME "Voxeler"
 
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
@@ -80,7 +86,7 @@ namespace Voxeler {
 		Engine();
 
 	private:
-		float lastFrame, deltaTime;
+		void Window();
 	};
 
 	static Engine& Core = Engine::Ref();
