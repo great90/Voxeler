@@ -1,2 +1,10 @@
 .vscode/
 *.exe
+Engine/.vs/
+*.sln
+*.vcxproj
+*.vcxproj.filters
+*.obj
+*pch
+bin/
+Engine/bin
