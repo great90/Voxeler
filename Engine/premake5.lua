@@ -14,8 +14,8 @@ workspace "Voxeler"
         libdirs {"Vendor/libs",}
 
         links {
-		    "glfw3.lib",
-		    "opengl32.lib",
+		    "glfw3",
+		    "opengl32",
 	    } 
         filter "configurations:Debug"
             defines { "DEBUG" }

@@ -59,6 +59,8 @@
 
 #endif
 
+#include "GLFW/glfw3.h"
+
 namespace Voxeler{
         void Exit();
         void Pause();
