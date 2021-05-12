@@ -108,6 +108,7 @@ namespace Voxeler {
 // Game stuff
 
 #include "Game/Game.h"
+#include "Errors/Errors.h"
 
 // Timer stuff
 
