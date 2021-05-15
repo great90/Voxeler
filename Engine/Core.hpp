@@ -98,18 +98,15 @@ namespace Voxeler {
 
 
 // ECS stuff
-
 #include "ECS/ECS.h"
 
 // Network stuff
-
 #include "Network/Network.h"
 
 // Game stuff
-
 #include "Game/Game.h"
 #include "Errors/Errors.h"
+#include "Renderer/Renderer.h"
 
 // Timer stuff
-
 #include "Core/Timer.h"
