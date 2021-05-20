@@ -59,7 +59,7 @@
 
 #endif
 
-#include "GLFW/glfw3.h"
+#include <GLFW/glfw3.h>
 
 namespace Voxeler{
         void Exit();
@@ -90,7 +90,7 @@ namespace Voxeler {
 		Engine();
 
 	private:
-		GLFWwindow* window;
+		//GLFWwindow* window;
 	};
 
 	static Engine& Core = Engine::Ref();
