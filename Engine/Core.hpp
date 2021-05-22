@@ -59,7 +59,7 @@
 
 #endif
 
-#include <GLFW/glfw3.h>
+//#include <GLFW/glfw3.h>
 
 namespace Voxeler{
         void Exit();
@@ -104,7 +104,7 @@ namespace Voxeler {
 #include "Network/Network.h"
 
 // Game stuff
-#include "Game/Game.h"
+#include "Game/Game.hpp"
 #include "Errors/Errors.h"
 #include "Renderer/Renderer.h"
 
