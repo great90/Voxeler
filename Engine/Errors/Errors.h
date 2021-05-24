@@ -5,6 +5,7 @@
 #define ASSERT(boolean) if (!(boolean)) __debugbreak();
 #define GLCALL(func) GLClearError(); func; ASSERT(GLLogCall(#func, __FILE__, __LINE__))
 
+/*
 static void GLClearError() {
 	while (glGetError() != GL_NO_ERROR);
 }
@@ -21,3 +22,4 @@ static bool GLLogCall(const char* function, const char* file, int line) {
 	}
 	return true;
 }
+*/

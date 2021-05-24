@@ -4,7 +4,6 @@ namespace Voxeler{
     
     void Engine::Initialize() {
         IsGameRunning = true;
-        std::cout << "Core initialization Done" << std::endl;
     }
 
     void Engine::Render(){

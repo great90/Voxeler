@@ -2,15 +2,14 @@
 
 #include "../Core.hpp"
 
-namespace CX{
+namespace Voxeler{
 typedef int(PlayerID)(int);
-
-class Game{
-
-};
-
-class GameManager{
-
-};
+    class Game{
+        public:
+            void Initialize();
+        private:
+            void InitializeSystems();
+            void InitializeComponents();
+    };
 
 }

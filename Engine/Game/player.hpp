@@ -2,13 +2,14 @@
 
 #include "../Core.hpp"
 
-namespace CX{
-    class Player{
-
+namespace Voxeler{
+    struct Player{
+        const char nickname;
+        ECS::EntityID Entity;
+        PlayerID ID;
     };
 
     class PlayerManager{
 
     };
-
 }
