@@ -21,4 +21,5 @@ namespace Voxeler{
     void Pause() {
         std::cin.get();
     }
+
 };

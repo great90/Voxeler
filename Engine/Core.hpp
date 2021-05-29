@@ -20,10 +20,17 @@
 #include <functional>
 #include <filesystem>
 #include <unordered_map>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <signal.h>
+#include <unistd.h>
+#include <sys/types.h>
+#include <pthread.h>
 
 // GL stuff
 
-//#include <GLFW/glfw3.h>
+#include <GLFW/glfw3.h>
 
 // General stuff
 
@@ -48,11 +55,15 @@
 #endif
 
 #ifdef VOX_WINDOWS
-    #include <windows.h>
+#include <windows.h>
+#include <winsock2.h>
 #endif
 
 #ifdef VOX_LINUX
-    #include <bits/stdc++.h>
+#include <bits/stdc++.h>
+#include <sys/socket.h>
+#include <netinet/in.h>
+#include <arpa/inet.h>
 #endif
 
 #ifdef VOX_APPLE
@@ -85,12 +96,13 @@ namespace Voxeler {
 		void Initialize();
 		void Render();
         void Update();
+		int ShowWindow();
 
 	private:
 		Engine();
 
 	private:
-		//GLFWwindow* window;
+		GLFWwindow* window;
 	};
 
 	static Engine& Core = Engine::Ref();

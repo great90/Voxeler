@@ -2,6 +2,8 @@
 
 #include "../Core.hpp"
 
+#include "../Network/Server.h"
+
 namespace Voxeler{
     struct Player{
         const char nickname;
@@ -9,7 +11,10 @@ namespace Voxeler{
         PlayerID ID;
     };
 
-    class PlayerManager{
-
+    class PlayersManager{
+        public:
+            
+        private:
+            Player* player;
     };
 }
