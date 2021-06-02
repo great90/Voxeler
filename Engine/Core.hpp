@@ -100,13 +100,9 @@ namespace Voxeler {
 		void Initialize();
 		void Render();
         void Update();
-		int ShowWindow();
 
 	private:
 		Engine();
-
-	private:
-		GLFWwindow* window;
 	};
 
 	static Engine& Core = Engine::Ref();
@@ -123,6 +119,7 @@ namespace Voxeler {
 #include "Game/Game.hpp"
 #include "Errors/Errors.h"
 #include "Renderer/Renderer.h"
+#include "Core/Window.h"
 
 // Timer stuff
 #include "Core/Timer.h"
