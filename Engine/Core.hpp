@@ -31,6 +31,10 @@
 // GL stuff
 
 #include <GLFW/glfw3.h>
+#include <glm/glm.hpp>
+#include <glm/trigonometric.hpp>
+#include <glm/vec4.hpp>
+#include <glm/vec3.hpp>
 
 // General stuff
 
