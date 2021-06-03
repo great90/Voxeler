@@ -1,22 +1,8 @@
-ENGINE_STUFF = Engine/*.cpp Engine/*.hpp Engine/*.h
-# CORE_STUFF = Engine/Core/*.cpp Engine/Core/*.h
-# ECS_STUFF = Engine/ECS/ECS.h Engine/ECS/**/*.h
-
-OBJS = $(ENGINE_STUFF)
-
+OBJS = Engine/*.cpp
+CC = g++
 COMPILER_FLAGS = -w
-
-GLFW_LIBRARY = -LEngine/Vendor/GLFW/lib -IEnigne/Vendor/GLFW/include
-
-LIBRARIES = $(GLFW_LIBRARY)
-
-LINKER_FLAGS = $(LIBRARIES) -lglfwdll
-
-OBJ_NAME = bin/Voxeler
+LINKER_FLAGS = -lsfml-graphics -lsfml-system -lsfml-window -lsfml-network -lsfml-audio -lglfw3 -lglew32
+OBJ_NAME = build/app
 
 all : $(OBJS)
-	mkdir -p bin
-	mkdir -p bin/Resource
-	cd ..
 	$(CC) $(OBJS) $(COMPILER_FLAGS) $(LINKER_FLAGS) -o $(OBJ_NAME)
-	cp Enigne/Vendor/dlls/* bin/
