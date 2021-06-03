@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef VOX_GAME_HPP
+#define VOX_GAME_HPP
+
 #include "../Core.hpp"
 
 namespace Voxeler{
@@ -7,10 +10,12 @@ namespace Voxeler{
 
     class Game{
         public:
-            void Initialize();
+            vint Initialize();
         private:
-            void InitializeSystems();
-            void InitializeComponents();
+            vint InitializeSystems();
+            vint InitializeComponents();
     };
 
 }
+
+#endif

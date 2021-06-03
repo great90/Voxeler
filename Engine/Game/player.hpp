@@ -1,4 +1,7 @@
-#pragma once //
+#pragma once
+
+#ifndef VOX_PLAYER_HPP
+#define VOX_PLAYER_HPP
 
 #include "../Core.hpp"
 
@@ -11,3 +14,5 @@ namespace Voxeler{
         PlayerID ID;
     };
 }
+
+#endif
