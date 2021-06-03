@@ -116,7 +116,7 @@ namespace Voxeler {
 #include "Network/Network.h"
 
 // Game stuff
-#include "Game/Game.hpp"
+#include "Game/game.hpp"
 #include "Errors/Errors.h"
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"
