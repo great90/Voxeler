@@ -8,12 +8,12 @@
 class Shader {
     private:
         GLuint prog;
-        Gluint prog_v;
-        Gluint prog_m;
-        Gluint prog_p;
-        Gluint prog_res;
-        Gluint prog_prop;
-        Gluint prog_time;
+        GLuint prog_v;
+        GLuint prog_m;
+        GLuint prog_p;
+        GLuint prog_res;
+        GLuint prog_prop;
+        GLuint prog_time;
         std::map<std::string, GLuint>uniforms;
         bool loaded;
     public:
