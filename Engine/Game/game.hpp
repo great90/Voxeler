@@ -3,7 +3,8 @@
 #include "../Core.hpp"
 
 namespace Voxeler{
-typedef int(PlayerID)(int);
+    typedef int(PlayerID)(int);
+
     class Game{
         public:
             void Initialize();

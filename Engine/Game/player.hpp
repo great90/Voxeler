@@ -10,11 +10,4 @@ namespace Voxeler{
         ECS::EntityID Entity;
         PlayerID ID;
     };
-
-    class PlayersManager{
-        public:
-            
-        private:
-            Player* player;
-    };
 }

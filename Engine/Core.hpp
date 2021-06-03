@@ -124,6 +124,5 @@ namespace Voxeler {
 #include "Errors/Errors.h"
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"
-
-// Timer stuff
 #include "Core/Timer.h"
+#include "Core/Types.h"
