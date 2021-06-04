@@ -54,10 +54,13 @@
 
 #if defined(_WIN32)
 #define VOX_WINDOWS
+#define VOX_OS "Windows"
 #elif defined(__linux__)
 #define VOX_LINUX
+#define VOX_OS "Linux"
 #elif defined(__APPLE__)
 #define VOX_APPLE
+#define VOX_OS "OSX"
 #else
 #error Not Supported Platform!
 #endif
@@ -84,19 +87,6 @@ namespace Voxeler{
         bool IsGameRunning;
 }
 
-namespace Voxeler{
-	struct PrintableObject{
-		friend std::ostream& operator<<(std::ostream&, PrintableObject);
-		std::string GetName();
-		std::string ToStr();
-	};
-	std::ostream& operator<<(std::ostream& stream, PrintableObject object){
-		stream << object.GetName() << ": " << std::endl;
-		stream << object.ToStr() << std::endl;
-		return stream;
-	}
-}
-
 namespace Voxeler {
 	class Engine {
 	public:
@@ -120,6 +110,18 @@ namespace Voxeler {
 	static Engine& Core = Engine::Ref();
 }
 
+namespace Voxeler{
+	struct PrintableObject{
+		friend std::ostream& operator<<(std::ostream&, PrintableObject);
+		std::string GetName();
+		std::string ToStr();
+	};
+	std::ostream& operator<<(std::ostream& stream, PrintableObject object){
+		stream << object.GetName() << ": " << std::endl;
+		stream << object.ToStr() << std::endl;
+		return stream;
+	}
+}
 
 // ECS stuff
 #include "ECS/ECS.h"
