@@ -3,7 +3,7 @@
 namespace Voxeler{
     
     void Engine::Initialize() {
-        IsGameRunning = true;
+        
     }
 
     void Engine::Render(){
