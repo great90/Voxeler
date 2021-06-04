@@ -1,28 +1,5 @@
 #include "Shader.h"
-
-void Shader::Load(std::string vsh, std::string fsh)
-{
-    prog = glCreateProgram();
-
-    GLuint vert = 0;
-    const char* vertSrc = vsh.c_str();
-    GLCALL(vert = glCreateShader(GL_VERTEX_SHADER));
-    GLCALL(glShaderSource(vert, 1, &vertSrc, NULL));
-    GLCALL(glCompileShader(vert));
-    GLCALL(glAttachShader(prog, vert));
-
-    GLuint frag = 0;
-    const char* fragSrc = vsh.c_str();
-    GLCALL(frag = glCreateShader(GL_FRAMENT_SHADER));
-    GLCALL(glShaderSource(frag, 1, &fragSrc, NULL));
-    GLCALL(glCompileShader(frag));
-    GLCALL(glAttachShader(prog, frag));
-    if(prog)loaded = true;
-    else loaded = false;
-    
-    glLinkProgram(prog);
-    glValidateProgram(prog);
-}
+#include "../Errors/Errors.h"
 
 void Shader::Free()
 {
@@ -34,8 +11,44 @@ void Shader::Bind()
     glUseProgram(prog);
 }
 
-void Shader::Unbind()
+void Shader::UnBind()
 {
     if(!prog)return;
     glUseProgram(0);
+}
+
+void Shader::Set1i(const GLchar* uName, GLint value) {
+	glUniform1i(glGetUniformLocation(prog, uName), value);
+}
+
+void Shader::Set1f(const GLchar* uName, GLfloat value) {
+	glUniform1f(glGetUniformLocation(prog, uName), value);
+}
+
+void Shader::Set2f(const GLchar* uName, GLfloat x, GLfloat y) {
+	glUniform2f(glGetUniformLocation(prog, uName), x, y);
+}
+
+void Shader::SetV2f(const GLchar* uName, glm::vec2 v) {
+	Set2f(uName, v.x, v.y);
+}
+
+void Shader::Set3f(const GLchar* uName, GLfloat x, GLfloat y, GLfloat z) {
+	glUniform3f(glGetUniformLocation(prog, uName), x, y, z);
+}
+
+void Shader::SetV3f(const GLchar* uName, glm::vec3 v) {
+	Set3f(uName, v.x, v.y, v.z);
+}
+
+void Shader::Set4f(const GLchar* uName, GLfloat x, GLfloat y, GLfloat z, GLfloat w) {
+	glUniform4f(glGetUniformLocation(prog, uName), x, y, z, w);
+}
+
+void Shader::SetV4f(const GLchar* uName, glm::vec4 v) {
+	Set4f(uName, v.x, v.y, v.z, v.z);
+}
+
+void Shader::SetMatrix4f(const GLchar* uName, const GLfloat* mtx) {
+	glUniformMatrix4fv(glGetUniformLocation(prog, uName), 1, GL_FALSE, mtx);
 }
