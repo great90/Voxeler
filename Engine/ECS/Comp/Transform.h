@@ -7,7 +7,7 @@ struct Transform : public ECS::BaseComponent {
         Transform() = default;
         ~Transform() = default;
 
-        glm::fvec3 Position = glm::fvec3(0.0f);
-        glm::fvec3 Rotation = glm::fvec3(0.0f);
-        glm::fvec3 Scale = glm::fvec3(1.0f);
+        Voxeler::Vector3f Position = Voxeler::Vector3f(0.0f);
+        Voxeler::Vector3f Rotation = Voxeler::Vector3f(0.0f);
+        Voxeler::Vector3f Scale = Voxeler::Vector3f(1.0f);
 };
