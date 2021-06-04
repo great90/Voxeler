@@ -87,15 +87,12 @@ namespace Voxeler{
 
 namespace Voxeler {
 	
-	struct PrintableObject
-	{
-		friend std::ostream& operator<<(std::ostream&, PrintableOnject);
-		virtual std::string GetName() = 0;
-		virtual std::string ToStr() = 0;
+	struct PrintableObject{
+		friend std::ostream& operator<<(std::ostream&, PrintableObject);
+		std::string GetName();
+		std::string ToStr();
 	};
-	
-	std::ostream& operator<<(std::ostream& stream, PrintableObject object)
-	{
+	std::ostream& operator<<(std::ostream& stream, PrintableObject object){
 		stream << object.GetName() << ": " << std::endl;
 		stream << object.ToStr() << std::endl;
 		return stream;

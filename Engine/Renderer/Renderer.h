@@ -24,7 +24,7 @@ namespace Voxeler{
                 return reference;
             }
 
-            vint InitializeRenderer();
+            int InitializeRenderer();
 
         private:
             Renderer();

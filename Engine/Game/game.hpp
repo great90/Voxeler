@@ -10,10 +10,10 @@ namespace Voxeler{
 
     class Game{
         public:
-            vint Initialize();
+            int Initialize();
         private:
-            vint InitializeSystems();
-            vint InitializeComponents();
+            int InitializeSystems();
+            int InitializeComponents();
     };
 
 }

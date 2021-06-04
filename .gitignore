@@ -12,6 +12,7 @@ Engine/.vs/
 *.log
 *.pdb
 *.idb
+*.o
 
 
 bin/
