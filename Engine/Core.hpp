@@ -123,4 +123,4 @@ namespace Voxeler {
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"
 #include "Core/Timer.h"
-#include "Core/Types.h"
+#include "Core/Math.h"
