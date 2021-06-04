@@ -30,11 +30,15 @@
 
 // GL stuff
 
+#include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <SFML/Graphics.hpp>
+
+#define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
-#include <glm/trigonometric.hpp>
-#include <glm/vec4.hpp>
-#include <glm/vec3.hpp>
+#include <glm/gtc/type_ptr.hpp>
+#include <glm/gtx/quaternion.hpp>
+#include <glm/gtc/matrix_transform.hpp>
 
 // General stuff
 
@@ -73,12 +77,6 @@
 #ifdef VOX_APPLE
 
 #endif
-
-
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-#include <glm/glm.hpp>
-#include <SFML/Graphics.hpp>
 
 namespace Voxeler{
         void Exit();
@@ -124,6 +122,5 @@ namespace Voxeler {
 #include "Errors/Errors.h"
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"
-
-// Timer stuff
 #include "Core/Timer.h"
+#include "Core/Types.h"

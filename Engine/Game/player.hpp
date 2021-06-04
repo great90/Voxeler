@@ -1,4 +1,7 @@
-#pragma once //
+#pragma once
+
+#ifndef VOX_PLAYER_HPP
+#define VOX_PLAYER_HPP
 
 #include "../Core.hpp"
 
@@ -10,11 +13,6 @@ namespace Voxeler{
         ECS::EntityID Entity;
         PlayerID ID;
     };
-
-    class PlayersManager{
-        public:
-            
-        private:
-            Player* player;
-    };
 }
+
+#endif
