@@ -5,4 +5,4 @@ using VertexBlock = glm::vec3;
 struct Vertex
 {
     VertexBlock* vertexPtr;
-}
+};
