@@ -75,18 +75,16 @@
 #endif
 
 #ifdef VOX_APPLE
-
+#error "This Platform is not supported yet!"
 #endif
 
 namespace Voxeler{
         void Exit();
         void Pause();
         bool IsGameRunning;
-        int Gamemode;
-};
+}
 
-namespace Voxeler {
-	
+namespace Voxeler{
 	struct PrintableObject{
 		friend std::ostream& operator<<(std::ostream&, PrintableObject);
 		std::string GetName();
@@ -97,9 +95,10 @@ namespace Voxeler {
 		stream << object.ToStr() << std::endl;
 		return stream;
 	}
-	
-	class Engine {
+}
 
+namespace Voxeler {
+	class Engine {
 	public:
 		~Engine();
 		Engine(const Engine&) = delete;

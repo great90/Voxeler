@@ -7,6 +7,7 @@
 #include "VertexArray.h"
 #include "Shader.h"
 #include "../Core.hpp"
+#include "../Core/Math.h"
 
 #define ASSERT(boolean) if (!(boolean))();
 #define GLCALL(func) GLClearError(); func; ASSERT(GLLogCall(#func, __FILE__, __LINE__))
@@ -24,7 +25,7 @@ namespace Voxeler{
                 return reference;
             }
 
-            int InitializeRenderer();
+            vint InitializeRenderer();
 
         private:
             Renderer();

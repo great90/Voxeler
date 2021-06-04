@@ -2,24 +2,14 @@
 
 namespace Voxeler{
     
-    void Engine::Initialize() {
-        
-    }
+    void Engine::Initialize() {}
 
-    void Engine::Render(){
+    void Engine::Render(){}
 
-    }
+    void Engine::Update(){ ECS::Manager.Update(); }
 
-    void Engine::Update(){
-        ECS::Manager.Update();
-    }
-
-    void Exit() {
-        IsGameRunning = false;
-    }
+    void Exit() {}
     
-    void Pause() {
-        std::cin.get();
-    }
+    void Pause() {std::cin.get();}
 
 };
