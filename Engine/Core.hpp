@@ -32,7 +32,7 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-//#include <SFML/Graphics.hpp>
+#include <SFML/Graphics.hpp>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>
@@ -86,7 +86,21 @@ namespace Voxeler{
 };
 
 namespace Voxeler {
-
+	
+	struct PrintableObject
+	{
+		friend std::ostream& operator<<(std::ostream&, PrintableOnject);
+		virtual std::string GetName() = 0;
+		virtual std::string ToStr() = 0;
+	};
+	
+	std::ostream& operator<<(std::ostream& stream, PrintableObject object)
+	{
+		stream << object.GetName() << ": " << std::endl;
+		stream << object.ToStr() << std::endl;
+		return stream;
+	}
+	
 	class Engine {
 
 	public:
