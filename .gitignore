@@ -17,6 +17,5 @@ Engine/.vs/
 
 bin/
 Engine/bin
-/Engine/Renderer/GLCore.h
 
 /CMakeFiles/*
