@@ -82,9 +82,11 @@
 #endif
 
 namespace Voxeler{
-        void Exit();
-        void Pause();
-        bool IsGameRunning;
+    void Exit();
+    void Pause();
+	using uint = uint32_t;
+    using uchar = unsigned char;
+    typedef void(*func)();
 }
 
 namespace Voxeler {
@@ -102,25 +104,13 @@ namespace Voxeler {
 		void Initialize();
 		void Render();
         void Update();
+		bool IsGameRunning;
 
 	private:
 		Engine();
 	};
 
 	static Engine& Core = Engine::Ref();
-}
-
-namespace Voxeler{
-	struct PrintableObject{
-		friend std::ostream& operator<<(std::ostream&, PrintableObject);
-		std::string GetName();
-		std::string ToStr();
-	};
-	std::ostream& operator<<(std::ostream& stream, PrintableObject object){
-		stream << object.GetName() << ": " << std::endl;
-		stream << object.ToStr() << std::endl;
-		return stream;
-	}
 }
 
 // ECS stuff

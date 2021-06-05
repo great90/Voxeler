@@ -16,7 +16,9 @@ namespace Voxeler{
     using Vector3 = glm::vec3;
     using Vector2 = glm::vec2;
 
+/*
 	double Sin(double angle) { return glm::sin(angle); }
 	double Cos(double angle) { return glm::cos(angle); }
 	double Tan(double angle) { return glm::tan(angle); }
+*/
 }
