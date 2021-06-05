@@ -2,7 +2,5 @@
 
 struct Window {
     GLFWwindow *window;
-    Window();
-    void Update();
-    void Destroy();
+    Window(std::string name, int SIZE1, int SIZE2);
 };

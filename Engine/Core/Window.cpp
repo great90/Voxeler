@@ -1,27 +1,15 @@
 #include "Window.h"
 
-Window::Window() {
+Window::Window(std::string name, int SIZE1, int SIZE2) {
     if (!glfwInit())
         return;
-    window = glfwCreateWindow(SCREEN_WIDTH, SCREEN_HEIGHT, WINDOW_NAME, NULL, NULL);
+    window = glfwCreateWindow(SIZE1, SIZE2, name.c_str(), NULL, NULL);
     if (!window) glfwTerminate();
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+        glfwSwapBuffers(window);
+        glfwPollEvents();
     }
-
-}
-
-void Window::Update(){
-    glfwSwapBuffers(window);
-    glfwPollEvents();    
-}
-
-void Window::Destroy(){
-    if(window){
-        glfwDestroyWindow(window);
-    }else{
-        glfwTerminate();
-        return;
-    }
+    glfwTerminate();
+    return;
 }
