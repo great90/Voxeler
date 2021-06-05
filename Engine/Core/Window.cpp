@@ -7,9 +7,21 @@ Window::Window() {
     if (!window) glfwTerminate();
     while (!glfwWindowShouldClose(window)) {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-        glfwSwapBuffers(window);
-        glfwPollEvents();
+
     }
-    glfwTerminate();
-    return;
+
+}
+
+void Window::Update(){
+    glfwSwapBuffers(window);
+    glfwPollEvents();    
+}
+
+void Window::Destroy(){
+    if(window){
+        glfwDestroyWindow(window);
+    }else{
+        glfwTerminate();
+        return;
+    }
 }
