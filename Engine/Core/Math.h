@@ -3,6 +3,8 @@
 #include "../Core.hpp"
 
 namespace Voxeler{
+    using vuint32 = unsigned int;
+    using vuint = vuint32;
     using vint = int;
     using vfloat = float;
     using vufloat = double;
