@@ -9,7 +9,6 @@ Discord Server! : https://discord.gg/aXHjdQfCMK
 
 # To Do:
 
-* Switch to CMake
 * Basic Networking stuff
 * Basic Renderer Stuff
 * Game Core
