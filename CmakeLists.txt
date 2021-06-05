@@ -27,6 +27,7 @@ Engine/Game/player.cpp
 Engine/Game/player.hpp
 Engine/Inputs/Keyboard.cpp
 Engine/Inputs/KeyBoard.hpp
+Engine/Renderer/Color.h
 Engine/Renderer/Renderer.cpp
 Engine/Renderer/Renderer.h
 Engine/Renderer/Shader.h
