@@ -16,8 +16,6 @@ namespace Voxeler{
 			void Load(std::string vsh, std::string fsh);
 			void Free();
 
-			void SetSample2D(const GLchar* uName, GLuint tex2d, GLint unit = 0);
-			void SetSampleCube(const GLchar* uName, GLuint cube, GLint unit = 0);
 			void Set1i(const GLchar* uName, GLint value);
 			void Set1f(const GLchar* uName, GLfloat value);
 			void Set2f(const GLchar* uName, GLfloat x, GLfloat y);

@@ -82,11 +82,14 @@
 #endif
 
 namespace Voxeler{
-    void Exit();
-    void Pause();
 	using uint = uint32_t;
     using uchar = unsigned char;
     typedef void(*func)();
+}
+
+namespace Voxeler{
+    void Exit();
+    void Pause();
 }
 
 namespace Voxeler {

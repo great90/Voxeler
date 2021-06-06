@@ -2,16 +2,14 @@
 cmake_minimum_required(VERSION 3.12)
 project(Voxeler)
 
-include_directories(../${PROJECT_SOURCE_DIR})
-
-find_package(OpenGL REQUIRED)
+set(PLATFORM "Linux")
+set(CONF "Debug")
 
 add_subdirectory(thirdparty/glad)
 add_subdirectory(thirdparty/glfw)
 add_subdirectory(thirdparty/glm)
-add_subdirectory(thirdparty/imgui-cmake)
 
-add_library(VOX STATIC
+SET(PROGRAM_SRCS
 Engine/App.cpp
 Engine/Core.hpp
 Engine/Core.cpp
@@ -27,7 +25,6 @@ Engine/Game/player.cpp
 Engine/Game/player.hpp
 Engine/Inputs/Keyboard.cpp
 Engine/Inputs/KeyBoard.hpp
-Engine/Renderer/Color.h
 Engine/Renderer/Renderer.cpp
 Engine/Renderer/Renderer.h
 Engine/Renderer/Shader.h
@@ -46,5 +43,6 @@ Engine/Comp/Camera.h
 Engine/Comp/Transform.h
 )
 
-target_compile_definitions(${PROJECT_NAME} PUBLIC IMGUI_IMPL_OPENGL_LOADER_GLAD)
-target_link_libraries(${PROJECT_NAME} opengl32 glad glfw glm imgui)
+target_link_libraries(Voxeler -lglad)
+target_link_libraries(Voxeler -lglfw3)
+target_link_libraries(Voxeler -lopengl32)

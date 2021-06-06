@@ -19,3 +19,6 @@ bin/
 Engine/bin
 
 /CMakeFiles/*
+CMakeCache.txt
+CMakeDoxyfile.in
+CMakeDoxygenDefaults.cmake
