@@ -107,10 +107,13 @@ namespace Voxeler {
 		void Initialize();
 		void Render();
         void Update();
-		bool IsGameRunning;
+		
+		inline const vbool Run() const { return IsGameRunning; }
 
 	private:
 		Engine();
+	private:
+		bool IsGameRunning;
 	};
 
 	static Engine& Core = Engine::Ref();
