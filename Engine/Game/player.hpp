@@ -11,9 +11,14 @@ namespace Voxeler{
     class Player{
         public:
             ~Player();
-            Player(std::string nickname, int ID);
+            Player(std::string NickName , int ID);
+
+            std::string Nickname;
+            vint id;
         private:
             Player();
+        private:
+            func SpawnPlayer(int ID, std::string nickname);
     };
 }
 
