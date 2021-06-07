@@ -7,14 +7,25 @@
 
 namespace Voxeler{
     typedef int(PlayerID)(int);
-
     class Game{
         public:
-            int Initialize();
+            ~Game();
+            Game(const Game&) = delete;
+            Game& operator=(const Game&) = delete;
+
+            static Game& Ref() {
+                static Game reference;
+                return reference;
+            }
+
+            vint Initialize();
         private:
-            int InitializeSystems();
-            int InitializeComponents();
+            Game();
+        private:
+            vint InitializeSystems();
+            vint InitializeComponents();
     };
+    static Game& GameCore = Game::Ref();
 
 }
 

@@ -8,6 +8,7 @@ set(CONF "Debug")
 add_subdirectory(thirdparty/glad)
 add_subdirectory(thirdparty/glfw)
 add_subdirectory(thirdparty/glm)
+add_subdirectory(thirdpart/imgui)
 
 SET(PROGRAM_SRCS
 Engine/App.cpp
