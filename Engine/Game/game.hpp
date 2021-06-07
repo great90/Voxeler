@@ -18,12 +18,12 @@ namespace Voxeler{
                 return reference;
             }
 
-            vint Initialize();
+            func Initialize(Window window);
         private:
             Game();
         private:
-            vint InitializeSystems();
-            vint InitializeComponents();
+            func InitializeSystems();
+            func InitializeComponents();
     };
     static Game& GameCore = Game::Ref();
 

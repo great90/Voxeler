@@ -8,10 +8,12 @@
 #include "../Network/Server.h"
 
 namespace Voxeler{
-    struct Player{
-        const char nickname;
-        ECS::EntityID Entity;
-        PlayerID ID;
+    class Player{
+        public:
+            ~Player();
+            Player(std::string nickname, int ID);
+        private:
+            Player();
     };
 }
 
