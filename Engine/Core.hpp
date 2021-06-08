@@ -120,14 +120,14 @@ namespace Voxeler {
 }
 
 // ECS stuff
-#include "ECS/ECS.h"
+#include "Core/ECS/ECS.h"
 
 // Network stuff
 #include "Network/Network.h"
 
 // Game stuff
 #include "Game/game.hpp"
-#include "Errors/Errors.h"
+#include "Core/Errors.h"
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"
 #include "Core/Timer.h"
