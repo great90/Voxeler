@@ -81,6 +81,8 @@
 #error "This Platform is not supported yet!"
 #endif
 
+using namespace VoxelerNetWork;
+
 namespace Voxeler{
 	using uint = uint32_t;
     using uchar = unsigned char;
@@ -109,11 +111,13 @@ namespace Voxeler {
         void Update();
 		
 		inline const vbool Run() const { return IsGameRunning; }
+		inline Server GetServer() const { return serv; }
 
 	private:
 		Engine();
 	private:
 		bool IsGameRunning;
+		Server serv;
 	};
 
 	static Engine& Core = Engine::Ref();

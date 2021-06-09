@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../Core.hpp"
+#include "../../Core.hpp"
 
 #ifdef ECS_ON
     #include "Base/BaseComponent.h"

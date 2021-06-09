@@ -7,7 +7,10 @@
 
 namespace VoxelerNetWork{
     class Server{
-
+        public:
+            ~Server();
+        private:
+            Server();
     };
 
 }

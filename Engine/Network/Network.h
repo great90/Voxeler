@@ -5,6 +5,9 @@
 
 #include "../Core.hpp"
 
+#include "Client.h"
+#include "Server.h"
+
 namespace VoxelerNetWork{
     class Network{
         
