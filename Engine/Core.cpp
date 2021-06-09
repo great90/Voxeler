@@ -2,7 +2,10 @@
 
 namespace Voxeler{
     
-    void Engine::Initialize() {}
+    void Engine::Initialize() { 
+        MainWindow = new Window(WINDOW_NAME, SCREEN_WIDTH, SCREEN_HEIGHT);
+        GameCore.Initialize(MainWindow);
+    }
 
     void Engine::Render(){}
 

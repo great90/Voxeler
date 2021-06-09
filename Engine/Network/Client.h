@@ -6,5 +6,6 @@
 #include "Network.h"
 #include "../Core.hpp"
 
+struct Client{};
 
 #endif

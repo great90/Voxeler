@@ -110,12 +110,14 @@ namespace Voxeler {
         void Update();
 		
 		inline const vbool Run() const { return IsGameRunning; }
+		inline Window* GetMainWindow() const { return MainWindow; }
 		inline Server GetServer() const { return serv; }
 
 	private:
 		Engine();
 	private:
 		bool IsGameRunning;
+		Window* MainWindow;
 		Server serv;
 	};
 

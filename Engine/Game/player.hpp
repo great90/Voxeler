@@ -13,11 +13,16 @@ namespace Voxeler{
             ~Player();
             Player(std::string NickName , int ID);
 
-            std::string Nickname;
-            vint id;
+            inline const int GetPlayerID() const { return id; };
+            inline const std::string GetPlayerNickName() const { return Nickname; };
+
         private:
             Player();
         private:
+            std::string Nickname;
+            Client client;
+            int id;
+        // Actions
             func SpawnPlayer(int ID, std::string nickname);
     };
 }
