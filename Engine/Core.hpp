@@ -32,7 +32,6 @@
 
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
-#include <SFML/Graphics.hpp>
 
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/glm.hpp>

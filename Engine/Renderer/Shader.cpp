@@ -1,5 +1,5 @@
 #include "Shader.h"
-#include "../Errors/Errors.h"
+#include "../Core/Errors.h"
 namespace Voxeler{
 	// Not Finished Yet!
 }
