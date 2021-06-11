@@ -1,5 +1,8 @@
 #pragma once
 
+#ifndef VOX_CORE_HPP
+#define VOX_CORE_HPP
+
 // Basic Includes
 #include <set>
 #include <map>
@@ -83,9 +86,9 @@
 using namespace VoxelerNetWork;
 
 namespace Voxeler{
-	using uint = uint32_t;
-    using uchar = unsigned char;
-    typedef void(*func)();
+using uint = uint32_t;
+using uchar = unsigned char;
+typedef void(*func)();
 }
 
 namespace Voxeler{
@@ -137,3 +140,5 @@ namespace Voxeler {
 #include "Core/Window.h"
 #include "Core/Timer.h"
 #include "Core/Math.h"
+
+#endif
