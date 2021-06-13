@@ -11,4 +11,6 @@ int main(){
         Core.Update();
         Core.Render();
     }
+
+    return VOX_TRUE;
 }

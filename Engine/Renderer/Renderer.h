@@ -7,9 +7,6 @@
 #include "../Core.hpp"
 #include "../Core/Math.h"
 
-#define ASSERT(boolean) if (!(boolean))();
-#define GLCALL(func) GLClearError(); func; ASSERT(GLLogCall(#func, __FILE__, __LINE__))
-
 namespace Voxeler{
     class Renderer{
         public:

@@ -83,18 +83,39 @@
 #error "This Platform is not supported yet!"
 #endif
 
+#define VOX_NULL NULL
+#define VOX_TRUE 0
+#define VOX_FALSE 1
+#define VOX_TERMS 7
+
+#define ASSERT(boolean) if (!(boolean))();
+#define GLCALL(func) GLClearError(); func; ASSERT(GLLogCall(#func, __FILE__, __LINE__))
+
+static void GLClearError() { while (glGetError() != GL_NO_ERROR); }
+
+static bool GLLogCall(const char* function, const char* file, int line) {
+	while (GLenum error = glGetError()) {
+		std::cout <<
+			"\n OpenGL Voxeler Error! [ " << error << " ]\n"
+			"function ::[ " << function << " ]\n"
+			"File ::[ " << file << " ]\n"
+			"line ::[ " << line << " ]"
+			<< std::endl;
+		return false;
+	}
+	return true;
+}
+
+
 using namespace VoxelerNetWork;
 
-namespace Voxeler{
-using uint = uint32_t;
-using uchar = unsigned char;
-typedef void(*func)();
+namespace Voxeler
+{
+	using uint = uint32_t;
+	using uchar = unsigned char;
+	typedef void(*func)();
 }
 
-namespace Voxeler{
-    void Exit();
-    void Pause();
-}
 
 namespace Voxeler {
 	class Engine {
@@ -113,15 +134,11 @@ namespace Voxeler {
         void Update();
 		
 		inline const vbool Run() const { return IsGameRunning; }
-		inline Window* GetMainWindow() const { return MainWindow; }
-		inline Server GetServer() const { return serv; }
 
 	private:
 		Engine();
 	private:
 		bool IsGameRunning;
-		Window* MainWindow;
-		Server serv;
 	};
 
 	static Engine& Core = Engine::Ref();
@@ -135,7 +152,6 @@ namespace Voxeler {
 
 // Game stuff
 #include "Game/game.hpp"
-#include "Core/Errors.h"
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"
 #include "Core/Timer.h"
