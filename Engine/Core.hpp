@@ -83,39 +83,41 @@
 #error "This Platform is not supported yet!"
 #endif
 
-#define VOX_NULL NULL
-#define VOX_TRUE 0
-#define VOX_FALSE 1
+// Defines
+
+#define VOX_NULL 0
+#define VOX_SUCCES 0
+#define VOX_ERR -1
+#define VOX_TRUE true
+#define VOX_FALSE false
 #define VOX_TERMS 7
 
-#define ASSERT(boolean) if (!(boolean))();
-#define GLCALL(func) GLClearError(); func; ASSERT(GLLogCall(#func, __FILE__, __LINE__))
-
-static void GLClearError() { while (glGetError() != GL_NO_ERROR); }
-
-static bool GLLogCall(const char* function, const char* file, int line) {
-	while (GLenum error = glGetError()) {
-		std::cout <<
-			"\n OpenGL Voxeler Error! [ " << error << " ]\n"
-			"function ::[ " << function << " ]\n"
-			"File ::[ " << file << " ]\n"
-			"line ::[ " << line << " ]"
-			<< std::endl;
-		return false;
-	}
-	return true;
-}
-
-
 using namespace VoxelerNetWork;
+
+// Types
 
 namespace Voxeler
 {
 	using uint = uint32_t;
 	using uchar = unsigned char;
+    using vuint32 = unsigned int;
+    using vuint = vuint32;
+    using vint = int;
+    using vfloat = float;
+    using vufloat = double;
+    using vlong = long;
+    using vshort = short;
+    using vchar = char;
+    using vstring = char*;
+    using vbool = bool;
+    using Matrix4 = glm::mat4;
+    using Vector3f = glm::fvec3;
+    using Vector3 = glm::vec3;
+    using Vector2 = glm::vec2;
 	typedef void(*func)();
 }
 
+// Main Engine class
 
 namespace Voxeler {
 	class Engine {
@@ -129,28 +131,32 @@ namespace Voxeler {
 			return reference;
 		}
 
-		void Initialize();
-		void Render();
-        void Update();
+		uint Initialize();
+		func Render();
+        func Update();
+
+		uint Exit();
+		func Pause();
 		
 		inline const vbool Run() const { return IsGameRunning; }
+		inline Window* GetWindow() { return MainWindow; }
 
 	private:
 		Engine();
 	private:
+	 	Window* MainWindow;
 		bool IsGameRunning;
 	};
 
 	static Engine& Core = Engine::Ref();
 }
 
-// ECS stuff
+// Includes:
+
 #include "Core/ECS/ECS.h"
 
-// Network stuff
 #include "Network/Network.h"
 
-// Game stuff
 #include "Game/game.hpp"
 #include "Renderer/Renderer.h"
 #include "Core/Window.h"

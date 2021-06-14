@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/glad.dir/src/glad.c.obj"
-  "glad.lib"
-  "glad.pdb"
+  "CMakeFiles/glad.dir/src/glad.c.o"
   "include/glad/glad.h"
+  "libglad.a"
+  "libglad.pdb"
   "src/glad.c"
 )
 

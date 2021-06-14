@@ -12,5 +12,5 @@ int main(){
         Core.Render();
     }
 
-    return VOX_TRUE;
+    return VOX_SUCCES;
 }

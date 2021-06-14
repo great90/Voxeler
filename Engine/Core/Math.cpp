@@ -1,13 +1,15 @@
 #include "Math.h"
 
 namespace Voxeler{
-    float Math::Radians(float degrees) { return degrees * static_cast<float>(0.01745329251994329576923690768489); }
+    float Math::Radians(float degrees) { return degrees * PI() / 180; }
+
+	float Math::Degrees(float radians) { return radians * PI() / 180; }
 
 	float Math::Lerp(float start, float stop, float step) { float v = start; while (v != stop) { v = (stop * step) + (start * 1.0 - step); } return v;}
 
 	float Math::PI() { return 3.14159265359; }
 
-	float Math::Sine(int deg) {
+	float Math::Sin(int deg) {
 		deg %= 360;
 		float rad = deg * PI() / 180;
 		float sin = 0;
@@ -21,7 +23,6 @@ namespace Voxeler{
 		deg %= 360; // make it less than 360
 		float rad = deg * PI() / 180;
 		float cos = 0;
-
 		int i;
 		for (i = 0; i < VOX_TERMS; i++) {
 			cos += power(-1, i) * power(rad, 2 * i) / fact(2 * i);

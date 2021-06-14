@@ -1,49 +1,22 @@
-
-cmake_minimum_required(VERSION 3.12)
+cmake_minimum_required(VERSION 3.16 FATAL_ERROR)
 project(Voxeler)
 
-set(PLATFORM "Linux")
-set(CONF "Debug")
+find_package(OpenGL REQUIRED)
+
+include_directories(thirdparty/glad/include)
+include_directories(thirdparty/glfw/include)
+include_directories(thirdparty/glm/include)
 
 add_subdirectory(thirdparty/glad)
 add_subdirectory(thirdparty/glfw)
 add_subdirectory(thirdparty/glm)
-add_subdirectory(thirdpart/imgui)
 
-SET(PROGRAM_SRCS
-Engine/App.cpp
-Engine/Core.hpp
-Engine/Core.cpp
-Engine/Core/Math.h
-Engine/Core/Timer.cpp
-Engine/Core/Timer.h
-Engine/Core/Window.h
-Engine/Core/Window.cpp
-Engine/Errors/Errors.h
-Engine/Game/game.hpp
-Engine/Game/game.cpp
-Engine/Game/player.cpp
-Engine/Game/player.hpp
-Engine/Inputs/Keyboard.cpp
-Engine/Inputs/KeyBoard.hpp
-Engine/Renderer/Renderer.cpp
-Engine/Renderer/Renderer.h
-Engine/Renderer/Shader.h
-Engine/Renderer/Shader.cpp
-Engine/Renderer/Vertex.h
-Engine/Renderer/VertexArray.h
-Engine/ECS/ECS.h
-Engine/ECS/Base/BaseComponent.h
-Engine/ECS/Base/BaseSystem.h
-Engine/ECS/Base/CompList.h
-Engine/ECS/Base/ComponentFactory.h
-Engine/ECS/Base/Entity.h
-Engine/ECS/Base/EntityManager.h
-Engine/ECS/Base/Types.h
-Engine/Comp/Camera.h
-Engine/Comp/Transform.h
-)
+file(GLOB_RECURSE Runtime "Engine/**.cpp" "Engine/**.h" "Engine/**.hpp")
 
-target_link_libraries(Voxeler -lglad)
-target_link_libraries(Voxeler -lglfw3)
-target_link_libraries(Voxeler -lopengl32)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/Build/bin")
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY "${CMAKE_SOURCE_DIR}/Build/bin")
+
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED true)
+
+add_executable(Voxeler ${Runtime})

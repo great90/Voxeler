@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "glad.lib"
+  "libglad.a"
 )

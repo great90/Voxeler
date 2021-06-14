@@ -2,17 +2,23 @@
 
 namespace Voxeler{
     
-    void Engine::Initialize() { 
+    uint Engine::Initialize() { 
         MainWindow = new Window(WINDOW_NAME, SCREEN_WIDTH, SCREEN_HEIGHT);
         GameCore.Initialize(MainWindow);
+        return VOX_NULL;
     }
 
-    void Engine::Render(){}
+    func Engine::Render(){}
 
-    void Engine::Update(){ ECS::Manager.Update(); }
+    func Engine::Update(){ ECS::Manager.Update(); }
 
-    void Exit() {}
+    uint Engine::Exit() {
+        std::exit(-1); 
+        return VOX_NULL;
+    }
     
-    void Pause() {std::cin.get();}
+    func Engine::Pause() {
+        std::cin.get();
+    }
 
 };
