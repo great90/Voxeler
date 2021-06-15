@@ -92,8 +92,6 @@
 #define VOX_FALSE false
 #define VOX_TERMS 7
 
-using namespace VoxelerNetWork;
-
 // Types
 
 namespace Voxeler
@@ -116,6 +114,20 @@ namespace Voxeler
     using Vector2 = glm::vec2;
 	typedef void(*func)();
 }
+
+// Includes:
+
+
+#include "Core/Window.h"
+#include "Core/ECS/ECS.h"
+
+#include "Network/Network.h"
+#include "Game/game.hpp"
+#include "Renderer/Renderer.h"
+#include "Core/Timer.h"
+#include "Core/Math.h"
+
+using namespace VoxelerNetWork;
 
 // Main Engine class
 
@@ -150,17 +162,5 @@ namespace Voxeler {
 
 	static Engine& Core = Engine::Ref();
 }
-
-// Includes:
-
-#include "Core/ECS/ECS.h"
-
-#include "Network/Network.h"
-
-#include "Game/game.hpp"
-#include "Renderer/Renderer.h"
-#include "Core/Window.h"
-#include "Core/Timer.h"
-#include "Core/Math.h"
 
 #endif

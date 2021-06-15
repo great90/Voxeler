@@ -4,7 +4,6 @@ namespace Voxeler{
     
     uint Engine::Initialize() { 
         MainWindow = new Window(WINDOW_NAME, SCREEN_WIDTH, SCREEN_HEIGHT);
-        GameCore.Initialize(MainWindow);
         return VOX_NULL;
     }
 

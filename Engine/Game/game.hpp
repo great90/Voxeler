@@ -18,7 +18,7 @@ namespace Voxeler{
                 return reference;
             }
 
-            func Initialize(Window window);
+            func Initialize(Window* window);
         private:
             Game();
         private:

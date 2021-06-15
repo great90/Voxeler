@@ -22,3 +22,6 @@ Engine/bin
 CMakeCache.txt
 CMakeDoxyfile.in
 CMakeDoxygenDefaults.cmake
+cmake_install.cmake
+CMakeFiles/*
+Makefile
