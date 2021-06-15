@@ -12,3 +12,5 @@ Discord Server! : https://discord.gg/aXHjdQfCMK
 * Basic Networking stuff
 * Basic Renderer Stuff
 * Game Core
+* Better Cmake Build
+* Lua scripting
